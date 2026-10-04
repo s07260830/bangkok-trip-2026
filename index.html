@@ -3,294 +3,199 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#F4EFE6"/>
+<meta name="theme-color" content="#f4efe7"/>
 <title>Bangkok Trip 2026 · 10/09</title>
 <style>
-:root{
-  --bg:#f4efe6;--paper:#fffaf2;--ink:#1f1c19;--muted:#82776c;--line:#d8cfc3;
-  --brick:#a9513e;--leaf:#687a67;--gold:#c28d42;--blue:#778a90;--shadow:0 12px 32px rgba(65,48,32,.08)
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Helvetica Neue",sans-serif}
-button,a{font:inherit;color:inherit} button{cursor:pointer} a{text-decoration:none}
-svg{display:block}
-.app{max-width:620px;margin:auto;padding:0 18px 112px}
-.hero{padding:24px 2px 20px;border-bottom:1px solid var(--line)}
-.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
-.stamp{border:1px solid var(--brick);color:var(--brick);border-radius:999px;padding:7px 10px;transform:rotate(-2deg);white-space:nowrap}
-.hero h1{font:500 43px/1 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:28px 0 10px}
-.hero .deck{font:italic 16px/1.6 Georgia,"Times New Roman",serif;color:#665d55;max-width:470px}
-.route-line{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px;color:var(--muted);font-size:10px}
-.route-line span{display:flex;align-items:center;gap:7px}.route-line span:not(:last-child):after{content:"→";color:#b9ad9f}
-.quick{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:8px;margin-top:16px}
-.quick button,.quick a{border:1px solid var(--line);background:rgba(255,255,255,.35);border-radius:14px;padding:11px 10px;text-align:left;font-size:11px}
-.quick b{display:block;font-size:13px;margin-top:2px}
-.status{margin-top:14px;background:#22201d;color:#fff;border-radius:18px;padding:15px 16px;box-shadow:var(--shadow)}
-.status-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#cfc5ba}
-.status h3{font:500 22px Georgia;margin:8px 0 4px}.status p{font-size:11px;color:#d7cec5;margin:0;line-height:1.6}
-.progress{height:4px;background:rgba(255,255,255,.14);border-radius:999px;margin-top:12px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:#f2d19a;transition:.3s}
-.tabs{position:sticky;top:0;z-index:30;margin:0 -18px;padding:9px 18px;background:rgba(244,239,230,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}
-.tabs button{border:1px solid var(--line);background:transparent;padding:8px 11px;border-radius:999px;font-size:11px;color:var(--muted);white-space:nowrap}.tabs button.active{background:var(--ink);border-color:var(--ink);color:#fff}
-.rain-banner{display:none;margin-top:18px;background:#e6ece4;border-left:3px solid var(--leaf);padding:13px 14px;font-size:12px;line-height:1.65}.rain .rain-banner{display:block}
-.section{padding:28px 0 4px}
-.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:13px}.section-head h2{font:500 29px/1 Georgia;margin:0}.section-head span{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
-.timeline{position:relative}.timeline:before{content:"";position:absolute;left:34px;top:18px;bottom:15px;width:1px;background:var(--line)}
-.stop{display:grid;grid-template-columns:68px 1fr;gap:14px;padding-bottom:20px;position:relative}
-.time{font:italic 13px Georgia;color:var(--brick);padding-top:12px}
-.card{position:relative;background:rgba(255,250,242,.62);border:1px solid var(--line);border-radius:18px;padding:14px 14px 13px;box-shadow:0 5px 18px rgba(64,47,33,.035)}
-.card:before{content:"";position:absolute;left:-43px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--brick)}
-.card.done{opacity:.62}.card.done h3{text-decoration:line-through}
-.card-head{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:start}
-.illu{width:40px;height:40px;border-radius:13px;background:#efe4d7;display:grid;place-items:center;color:var(--brick)}
-.illu svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.type{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);font-weight:700}
-.card h3{font-size:17px;margin:3px 0 4px}.desc{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
-.donebtn{width:29px;height:29px;border-radius:50%;border:1px solid var(--line);background:transparent;display:grid;place-items:center;font-size:13px}.done .donebtn{background:var(--leaf);color:#fff;border-color:var(--leaf)}
-.address{margin-top:11px;padding-top:10px;border-top:1px dashed var(--line);font-size:10px;line-height:1.5;color:#6f665e;display:flex;gap:8px;align-items:flex-start}
-.address .pin{font-size:12px;color:var(--brick)}
-.tools{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-.tool{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 10px;font-size:10px;display:inline-flex;align-items:center;gap:5px}.tool.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
-.tool svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-details.more{margin-top:10px;border-top:1px solid #e9e0d7;padding-top:9px}
-details.more summary{list-style:none;font-size:10px;color:var(--brick);font-weight:700;cursor:pointer}details.more summary::-webkit-details-marker{display:none}
-.morebox{margin-top:9px;background:#f4ede3;border-radius:13px;padding:10px 11px;font-size:10px;line-height:1.65;color:#6f665e}
-.rain-tip{display:none;color:var(--leaf);font-weight:650;margin-top:6px}.rain .rain-tip{display:block}
-.edit{margin-top:12px}.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.shop{background:var(--paper);border:1px solid var(--line);padding:13px;border-radius:16px;min-height:132px;position:relative}.shop .no{font:italic 10px Georgia;color:var(--brick)}.shop h4{font-size:13px;margin:18px 0 6px}.shop p{font-size:10px;line-height:1.55;color:var(--muted);margin:0}.shop label{position:absolute;right:10px;top:10px}.shop input{accent-color:var(--brick)}
+:root{--bg:#f4efe7;--paper:#fffaf3;--ink:#201d19;--muted:#84796f;--line:#d9cfc4;--brick:#a6523f;--green:#657765;--gold:#bd8b45;--blue:#73878f;--shadow:0 12px 34px rgba(63,47,34,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Helvetica Neue",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}img{display:block;width:100%}
+.app{max-width:620px;margin:auto;padding:0 18px 112px}.hero{padding:24px 2px 20px;border-bottom:1px solid var(--line)}.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.stamp{border:1px solid var(--brick);color:var(--brick);border-radius:999px;padding:7px 10px;transform:rotate(-2deg)}.hero h1{font:500 43px/1 Georgia,serif;letter-spacing:-.035em;margin:28px 0 10px}.hero .deck{font:italic 16px/1.6 Georgia,serif;color:#665d55;max-width:470px}.route-line{display:flex;gap:7px;flex-wrap:wrap;margin-top:19px;color:var(--muted);font-size:10px}.route-line span{display:flex;align-items:center;gap:7px}.route-line span:not(:last-child):after{content:"→";color:#b6aa9c}
+.quick{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:8px;margin-top:16px}.quick button,.quick a{border:1px solid var(--line);background:rgba(255,255,255,.35);border-radius:14px;padding:11px 10px;text-align:left;font-size:10px}.quick b{display:block;font-size:12px;margin-top:3px}
+.status{margin-top:14px;background:#24211d;color:#fff;border-radius:18px;padding:15px 16px;box-shadow:var(--shadow)}.status-top{display:flex;justify-content:space-between;gap:12px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#cfc5ba}.status h3{font:500 22px Georgia;margin:8px 0 4px}.status p{font-size:11px;color:#d7cec5;margin:0;line-height:1.6}.progress{height:4px;background:rgba(255,255,255,.14);border-radius:999px;margin-top:12px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:#f0cf97;transition:.25s}
+.tabs{position:sticky;top:0;z-index:30;margin:0 -18px;padding:9px 18px;background:rgba(244,239,231,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}.tabs button{border:1px solid var(--line);background:transparent;padding:8px 11px;border-radius:999px;font-size:11px;color:var(--muted);white-space:nowrap}.tabs button.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.mood{padding:24px 0 4px}.moodgrid{display:grid;grid-template-columns:1.3fr .7fr;grid-template-rows:128px 128px;gap:8px}.photo{position:relative;overflow:hidden;border-radius:18px;background:#ddd}.photo.big{grid-row:1/3}.photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(.94)}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(25,20,16,.42))}.caption{position:absolute;z-index:2;left:11px;bottom:9px;color:#fff;font-size:10px}.credit{font-size:8px;opacity:.8}
+.section{padding:27px 0 4px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:13px}.section-head h2{font:500 29px/1 Georgia;margin:0}.section-head span{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}.rain-banner{display:none;margin-top:18px;background:#e6ece4;border-left:3px solid var(--green);padding:13px 14px;font-size:12px;line-height:1.65}.rain .rain-banner{display:block}
+.nearby-box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:14px}.nearby-box h3{font-size:14px;margin:0 0 5px}.nearby-box p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}.nearby-result{margin-top:10px;background:#f0e9df;border-radius:13px;padding:11px;font-size:11px;display:none}.nearby-result.show{display:block}
+.timeline{position:relative}.timeline:before{content:"";position:absolute;left:34px;top:18px;bottom:15px;width:1px;background:var(--line)}.stop{display:grid;grid-template-columns:68px 1fr;gap:14px;padding-bottom:12px;position:relative}.time{font:italic 13px Georgia;color:var(--brick);padding-top:12px}.card{position:relative;background:rgba(255,250,243,.66);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 5px 18px rgba(64,47,33,.035)}.card:before{content:"";position:absolute;left:-43px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--brick)}.card.done{opacity:.62}.card.done h3{text-decoration:line-through}.card-head{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:start}.illu{width:40px;height:40px;border-radius:13px;background:#eee3d7;display:grid;place-items:center;font-size:20px}.type{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:700}.card h3{font-size:17px;margin:3px 0 4px}.desc{font-size:11px;line-height:1.6;color:var(--muted);margin:0}.donebtn{width:29px;height:29px;border-radius:50%;border:1px solid var(--line);background:transparent}.done .donebtn{background:var(--green);color:#fff;border-color:var(--green)}
+.addressbox{margin-top:11px;padding:11px;background:#f1e9de;border-radius:13px}.addressbox .thai-name{font-weight:700;font-size:12px;margin-bottom:4px}.addressbox .thai-address{font-size:11px;line-height:1.55;color:#5e554d}.tools{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.tool{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 10px;font-size:10px}.tool.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+details.more{margin-top:10px;border-top:1px solid #e7ded5;padding-top:9px}details.more summary{list-style:none;font-size:10px;color:var(--brick);font-weight:700;cursor:pointer}details.more summary::-webkit-details-marker{display:none}.morebox{margin-top:9px;font-size:10px;line-height:1.65;color:#6f665e}.nearlist{display:grid;gap:7px;margin-top:8px}.nearitem{padding:9px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.35)}.nearitem b{font-size:11px}.nearitem span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+.transit{margin:0 0 14px 68px;border:1px dashed #c7b9aa;border-radius:16px;padding:12px 13px;background:rgba(255,255,255,.25)}.transit .route-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.transit .route-top b{font-size:11px}.modebadge{font-size:9px;border-radius:999px;padding:5px 7px;background:#e8ecec;color:#50646b}.steps{margin-top:8px;font-size:10px;line-height:1.65;color:#645b53}.linepill{display:inline-block;padding:2px 6px;border-radius:999px;margin:1px 2px;font-size:9px;font-weight:700}.mrt{background:#dfe7f1;color:#315e8a}.bts{background:#e7eee2;color:#4b7144}.arl{background:#eee1e8;color:#8b496a}.walk{background:#eee9df;color:#6e6254}.grab{background:#e4efe8;color:#367052}.transit .transit-actions{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.shop{background:var(--paper);border:1px solid var(--line);padding:13px;border-radius:16px;min-height:128px;position:relative}.shop .no{font:italic 10px Georgia;color:var(--brick)}.shop h4{font-size:13px;margin:18px 0 6px}.shop p{font-size:10px;line-height:1.55;color:var(--muted);margin:0}.shop label{position:absolute;right:10px;top:10px}.shop input{accent-color:var(--brick)}
 .booking{background:#231f1b;color:white;border-radius:18px;padding:17px;margin-top:12px}.booking small{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#d3c7bc}.booking h3{font:500 25px Georgia;margin:7px 0 4px}.booking p{font-size:11px;line-height:1.65;color:#d6ccc4;margin:0}
-.toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,16px);background:#1f1c19;color:white;padding:10px 13px;border-radius:999px;font-size:11px;opacity:0;pointer-events:none;transition:.2s;z-index:60}.toast.show{opacity:1;transform:translate(-50%,0)}
-.bottom{position:fixed;z-index:40;left:50%;bottom:10px;transform:translateX(-50%);width:min(580px,calc(100% - 20px));background:rgba(31,28,25,.95);backdrop-filter:blur(14px);border-radius:18px;padding:7px;display:flex;justify-content:space-around;box-shadow:0 12px 34px rgba(0,0,0,.22)}
-.bottom button,.bottom a{border:0;background:none;color:white;text-align:center;font-size:9px;padding:6px 8px;opacity:.72}.bottom b{display:block;font-size:15px;margin-bottom:2px}.bottom .active{opacity:1}
-.footer{padding:30px 0 5px;text-align:center;color:var(--muted);font:italic 11px Georgia}
-@media(max-width:410px){.hero h1{font-size:38px}.quick{grid-template-columns:1fr 1fr}.quick>*:first-child{grid-column:1/-1}.edit-grid{grid-template-columns:1fr 1fr}}
+.toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,16px);background:#1f1c19;color:#fff;padding:10px 13px;border-radius:999px;font-size:11px;opacity:0;pointer-events:none;transition:.2s;z-index:60}.toast.show{opacity:1;transform:translate(-50%,0)}.bottom{position:fixed;z-index:40;left:50%;bottom:10px;transform:translateX(-50%);width:min(580px,calc(100% - 20px));background:rgba(31,28,25,.95);backdrop-filter:blur(14px);border-radius:18px;padding:7px;display:flex;justify-content:space-around;box-shadow:0 12px 34px rgba(0,0,0,.22)}.bottom button,.bottom a{border:0;background:none;color:#fff;text-align:center;font-size:9px;padding:6px 8px;opacity:.72}.bottom b{display:block;font-size:15px;margin-bottom:2px}.bottom .active{opacity:1}.footer{padding:30px 0 5px;text-align:center;color:var(--muted);font:italic 11px Georgia}
+@media(max-width:410px){.hero h1{font-size:38px}.quick{grid-template-columns:1fr 1fr}.quick>*:first-child{grid-column:1/-1}.moodgrid{grid-template-rows:110px 110px}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute">
-<defs>
-<symbol id="i-market" viewBox="0 0 24 24"><path d="M4 9h16l-1 10H5L4 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/><path d="M8 13h.01M12 13h.01M16 13h.01"/></symbol>
-<symbol id="i-street" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 20V9l4-3 4 3v11"/><path d="M13 20V5l6 3v12"/><path d="M7.5 12h3M15.5 10h1M15.5 13h1"/></symbol>
-<symbol id="i-food" viewBox="0 0 24 24"><path d="M5 3v8M8 3v8M5 7h3M6.5 11v10"/><path d="M15 3c3 3 3 8 0 10v8"/></symbol>
-<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></symbol>
-<symbol id="i-spa" viewBox="0 0 24 24"><path d="M12 20c-4-2-7-5-7-9 3 0 5 1 7 4 2-3 4-4 7-4 0 4-3 7-7 9Z"/><path d="M12 15c-2-3-2-6 0-9 2 3 2 6 0 9Z"/></symbol>
-<symbol id="i-hotel" viewBox="0 0 24 24"><path d="M4 20V7h16v13"/><path d="M8 10h2M14 10h2M8 14h2M14 14h2M10 20v-3h4v3"/></symbol>
-<symbol id="i-dinner" viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M6 18a6 6 0 0 1 12 0"/><path d="M12 8v2"/></symbol>
-<symbol id="i-cocktail" viewBox="0 0 24 24"><path d="M5 4h14l-7 8-7-8Z"/><path d="M12 12v7M8 20h8"/><path d="m15 4 3-2"/></symbol>
-<symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/><path d="M9 3v15M15 6v15"/></symbol>
-<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
-<symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m8 7 4-4 4 4"/><path d="M5 11v8h14v-8"/></symbol>
-</defs>
-</svg>
-
 <div class="app" id="app">
 <header class="hero">
   <div class="hero-top"><span>BANGKOK NOTES · 09 OCT 2026</span><span class="stamp">กรุงเทพฯ</span></div>
   <h1>Friday in Bangkok</h1>
   <div class="deck">老城的早晨、Song Wat 的街區散步、CentralWorld 的購物時間，最後在 Thong Lo 喝一杯。</div>
   <div class="route-line"><span>Trok Mor</span><span>Song Wat</span><span>Yaowarat</span><span>CentralWorld</span><span>Massage</span><span>Thong Lo</span></div>
-
   <div class="quick">
     <button onclick="openWholeRoute()"><span>DAY ROUTE</span><b>整日 Google Maps ↗</b></button>
     <button onclick="shareTrip()"><span>SHARE</span><b>分享網站</b></button>
     <a href="https://www.google.com/maps/search/?api=1&query=Avani+Ratchada+Bangkok+Hotel"><span>HOME BASE</span><b>回飯店 ↗</b></a>
   </div>
-
   <div class="status">
     <div class="status-top"><span id="statusLabel">TRIP STATUS</span><span id="progressText">0 / 8</span></div>
-    <h3 id="statusTitle">Bangkok day loading…</h3>
-    <p id="statusSub">會依曼谷當地時間顯示下一站；出發前則顯示倒數。</p>
-    <div class="progress"><i id="progressBar"></i></div>
+    <h3 id="statusTitle">Bangkok day loading…</h3><p id="statusSub">會依曼谷當地時間顯示下一站。</p><div class="progress"><i id="progressBar"></i></div>
   </div>
 </header>
 
 <nav class="tabs">
-  <button class="active" onclick="setMode(false,this)">☀ Normal</button>
-  <button onclick="setMode(true,this)">☂ Rain</button>
+  <button class="active" onclick="setMode(false,this)">☀ Normal</button><button onclick="setMode(true,this)">☂ Rain</button>
+  <button onclick="document.getElementById('nearby').scrollIntoView({behavior:'smooth'})">◎ Nearby</button>
   <button onclick="document.getElementById('songwat').scrollIntoView({behavior:'smooth'})">Song Wat</button>
   <button onclick="document.getElementById('central').scrollIntoView({behavior:'smooth'})">CentralWorld</button>
 </nav>
 
-<div class="rain-banner">雨天模式開啟：午後優先保留 CentralWorld＋按摩；Song Wat 如遇大雨縮短為重點選物與咖啡，不為了 checklist 硬淋雨。</div>
+<div class="rain-banner">雨天模式：午後優先保留 CentralWorld＋按摩；Song Wat 如遇大雨縮短為重點選物與咖啡，不為了打卡硬淋雨。</div>
 
-<section class="section">
-  <div class="section-head"><h2>Day plan</h2><span>09:30 → late</span></div>
-  <div class="timeline">
-
-    <article class="stop" data-stop="0" data-time="09:30" data-title="Trok Mor Morning Market">
-      <div class="time">09:30</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-market"/></svg></div><div><div class="type">morning market</div><h3>Trok Mor Morning Market</h3><p class="desc">早餐＋傳統早市 · 約 45 分鐘</p></div><button class="donebtn" onclick="toggleDone(0,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>Soi Thesa, Ratchabophit Road, Wat Ratchabophit, Phra Nakhon, Bangkok 10200, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Trok+Mor+Morning+Market+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'Soi Thesa, Ratchabophit Road, Wat Ratchabophit, Phra Nakhon, Bangkok 10200, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button></div>
-        <details class="more"><summary>＋ 當站小提醒</summary><div class="morebox">早市約 10:00 收，所以這站不要拖。先吃、再快速逛市場氛圍即可。</div></details>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="1" data-time="10:30" data-title="Song Wat 嵩越路">
-      <div class="time">10:30</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-street"/></svg></div><div><div class="type">neighbourhood</div><h3>Song Wat 嵩越路</h3><p class="desc">老商行 × 選物 × 藝廊 × 咖啡 · 約 2 小時</p></div><button class="donebtn" onclick="toggleDone(1,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>Song Wat Rd, Samphanthawong, Bangkok 10100, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Song+Wat+Road+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'Song Wat Rd, Samphanthawong, Bangkok 10100, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button><button class="tool" onclick="document.getElementById('songwat').scrollIntoView({behavior:'smooth'})">必逛 ↓</button></div>
-        <div class="rain-tip">☂ 大雨時縮成 Garçon Dept.＋一間咖啡＋一間藝廊，約 75–90 分鐘。</div>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="2" data-time="12:30" data-title="Yaowarat / Chinatown">
-      <div class="time">12:30</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-food"/></svg></div><div><div class="type">lunch</div><h3>Yaowarat / Chinatown</h3><p class="desc">午餐＋唐人街散步 · 約 75 分鐘</p></div><button class="donebtn" onclick="toggleDone(2,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>632 Yaowarat Rd, Samphanthawong, Bangkok 10100, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Yaowarat+Road+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'632 Yaowarat Rd, Samphanthawong, Bangkok 10100, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button></div>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="3" data-time="14:30" data-title="CentralWorld">
-      <div class="time">14:30</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-bag"/></svg></div><div><div class="type">shopping</div><h3>CentralWorld</h3><p class="desc">固定保留的一站 · 至少 90 分鐘</p></div><button class="donebtn" onclick="toggleDone(3,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>999/9 Rama I Rd, Pathum Wan, Bangkok 10330, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=CentralWorld+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'999/9 Rama I Rd, Pathum Wan, Bangkok 10330, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button><button class="tool" onclick="document.getElementById('central').scrollIntoView({behavior:'smooth'})">必逛 ↓</button></div>
-        <div class="rain-tip">☂ 雨大也不影響，這站可以順勢延長 30–45 分鐘。</div>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="4" data-time="16:10" data-title="THE FOREST MASSAGE">
-      <div class="time">16:10</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-spa"/></svg></div><div><div class="type">rain buffer</div><h3>THE FOREST MASSAGE</h3><p class="desc">1.5–2 小時 · 午後雷雨時段放室內</p></div><button class="donebtn" onclick="toggleDone(4,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>120/181 Soi Ratchaprarop 3, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=THE+FOREST+MASSAGE+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'120/181 Soi Ratchaprarop 3, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button></div>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="5" data-time="18:20" data-title="Avani Ratchada">
-      <div class="time">18:20</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-hotel"/></svg></div><div><div class="type">reset</div><h3>Avani Ratchada</h3><p class="desc">洗澡、換裝、休息，再去 Thong Lo</p></div><button class="donebtn" onclick="toggleDone(5,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>1 Ratchadaphisek Rd, Din Daeng, Bangkok 10400, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Avani+Ratchada+Bangkok+Hotel"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'1 Ratchadaphisek Rd, Din Daeng, Bangkok 10400, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button></div>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="6" data-time="20:00" data-title="Thong Lo dinner">
-      <div class="time">20:00</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-dinner"/></svg></div><div><div class="type">dinner</div><h3>Thong Lo dinner</h3><p class="desc">餐廳待選 · 原則是留在 Paper Plane 附近</p></div><button class="donebtn" onclick="toggleDone(6,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>Thong Lo Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Thong+Lo+Road+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'Thong Lo Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand')"><svg><use href="#i-copy"/></svg>複製區域地址</button></div>
-      </div>
-    </article>
-
-    <article class="stop" data-stop="7" data-time="21:30" data-title="Paper Plane Project">
-      <div class="time">21:30</div>
-      <div class="card">
-        <div class="card-head"><div class="illu"><svg><use href="#i-cocktail"/></svg></div><div><div class="type">reservation</div><h3>Paper Plane Project</h3><p class="desc">T-One 40F · 今晚唯一需要鎖死的時間</p></div><button class="donebtn" onclick="toggleDone(7,this)">✓</button></div>
-        <div class="address"><span class="pin">⌖</span><span>T-One Building, 8 Sukhumvit 40, 40th Floor, Khlong Toei, Bangkok 10110, Thailand</span></div>
-        <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Paper+Plane+Project+Bangkok"><svg><use href="#i-map"/></svg>Maps</a><button class="tool" onclick="copyAddress(this,'T-One Building, 8 Sukhumvit 40, 40th Floor, Khlong Toei, Bangkok 10110, Thailand')"><svg><use href="#i-copy"/></svg>複製地址</button></div>
-        <details class="more"><summary>＋ Reservation note</summary><div class="morebox">建議預約 21:30。當天出發前再確認訂位姓名、人數、當週活動／DJ 與入場規則。</div></details>
-      </div>
-    </article>
+<section class="mood">
+  <div class="moodgrid">
+    <a class="photo big" href="https://commons.wikimedia.org/wiki/File:%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%A7%E0%B8%B2%E0%B8%94.jpg" target="_blank">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%A7%E0%B8%B2%E0%B8%94.jpg?width=1000" alt="Song Wat Road">
+      <div class="caption">SONG WAT<div class="credit">Phoebus 28 · CC BY-SA 4.0</div></div>
+    </a>
+    <a class="photo" href="https://commons.wikimedia.org/wiki/File:CentralWorld-2015.jpg" target="_blank">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CentralWorld-2015.jpg?width=700" alt="CentralWorld Bangkok">
+      <div class="caption">RATCHAPRASONG<div class="credit">Wikimedia Commons</div></div>
+    </a>
+    <a class="photo" href="https://commons.wikimedia.org/wiki/File:2016_Bangkok,_Dystrykt_Samphanthawong,_Ulica_Yaowarat_(05).jpg" target="_blank">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_(05).jpg?width=700" alt="Yaowarat Road">
+      <div class="caption">YAOWARAT<div class="credit">Wikimedia Commons</div></div>
+    </a>
   </div>
 </section>
 
-<section class="section" id="songwat">
-  <div class="section-head"><h2>Song Wat edit</h2><span>save these</span></div>
-  <div class="edit-grid">
-    <div class="shop"><span class="no">01 · fashion</span><h4>Garçon Dept.</h4><p>服飾與生活選物，優先逛。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">02 · objects</span><h4>Oyster and Things</h4><p>偏 lifestyle / objects，不是制式伴手禮。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">03 · art</span><h4>PLAY art house</h4><p>小型藝術空間，有時間再進。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">04 · coffee</span><h4>SCR / Local Boys</h4><p>二選一，不做咖啡店集郵。</p><label><input type="checkbox" class="shopcheck"></label></div>
-  </div>
-</section>
-
-<section class="section" id="central">
-  <div class="section-head"><h2>CentralWorld edit</h2><span>90 min hit list</span></div>
-  <div class="edit-grid">
-    <div class="shop"><span class="no">01 · thai fashion</span><h4>GENTLEWOMAN</h4><p>泰國人氣女裝與包款，優先。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">02 · scent</span><h4>MITH / Journal / Butterfly</h4><p>集中試泰國香氛。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">03 · local goods</span><h4>HUG THAI</h4><p>在地品牌與伴手禮。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">04 · lifestyle</span><h4>CHABATREE</h4><p>木質生活用品、餐廚設計。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">05 · books</span><h4>Kinokuniya</h4><p>雜誌、設計、旅行書。</p><label><input type="checkbox" class="shopcheck"></label></div>
-    <div class="shop"><span class="no">06 · optional</span><h4>POP MART</h4><p>時間不足時第一個刪。</p><label><input type="checkbox" class="shopcheck"></label></div>
+<section class="section" id="nearby">
+  <div class="section-head"><h2>Where am I?</h2><span>live proximity</span></div>
+  <div class="nearby-box">
+    <h3>◎ 找離你最近的行程點</h3>
+    <p>點一下後，Safari / Chrome 會詢問定位權限；只在你的手機瀏覽器內計算，不會把位置存進網站。</p>
+    <div class="tools"><button class="tool primary" onclick="findNearby()">使用目前位置</button></div>
+    <div class="nearby-result" id="nearbyResult"></div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-head"><h2>Tonight</h2><span>reservation</span></div>
-  <div class="booking"><small>21:30 · T-ONE 40F</small><h3>Paper Plane Project</h3><p>如果 20:00 吃晚餐，建議選 Thong Lo／Phra Khanong 一帶，吃完直接去酒吧，不要再跨區。</p></div>
+<div class="section-head"><h2>Day plan</h2><span>09:30 → late</span></div>
+<div class="timeline">
+
+<article class="stop" data-stop="0"><div class="time">09:30</div><div class="card">
+  <div class="card-head"><div class="illu">🧺</div><div><div class="type">morning market</div><h3>Trok Mor Morning Market</h3><p class="desc">早餐＋傳統早市 · 約 45 分鐘</p></div><button class="donebtn" onclick="toggleDone(0)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">ตลาดตรอกหม้อ</div><div class="thai-address">ซอยเทศา ถนนราชบพิธ แขวงวัดราชบพิธ เขตพระนคร กรุงเทพมหานคร 10200</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Trok+Mor+Morning+Market+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'ตลาดตรอกหม้อ\nซอยเทศา ถนนราชบพิธ แขวงวัดราชบพิธ เขตพระนคร กรุงเทพมหานคร 10200')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>เสาชิงช้า · Giant Swing</b><span>步行約 5 分鐘</span></div><div class="nearitem"><b>วัดสุทัศนเทพวราราม · Wat Suthat</b><span>早市旁邊，適合快速看外觀</span></div><div class="nearitem"><b>วัดราชบพิธ · Wat Ratchabophit</b><span>步行約 5–8 分鐘</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>Trok Mor → Song Wat</b><span class="modebadge">MRT＋步行</span></div><div class="steps">步行至 <b>Sam Yot 三ยอด BL30</b> → 搭 <span class='linepill mrt'>MRT Blue Line</span> 1 站到 <b>Wat Mangkon วัดมังกร BL29</b> → Exit 1 → 步行約 10 分鐘到 Song Wat。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Trok+Mor+Morning+Market+Bangkok&destination=Song+Wat+Road+Bangkok&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Trok+Mor+Morning+Market+Bangkok&destination=Song+Wat+Road+Bangkok&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="1"><div class="time">10:30</div><div class="card">
+  <div class="card-head"><div class="illu">🏮</div><div><div class="type">neighbourhood</div><h3>Song Wat 嵩越路</h3><p class="desc">選物 × 藝廊 × 咖啡 · 約 2 小時</p></div><button class="donebtn" onclick="toggleDone(1)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">ถนนทรงวาด</div><div class="thai-address">ถนนทรงวาด แขวงจักรวรรดิ เขตสัมพันธวงศ์ กรุงเทพมหานคร 10100</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Song+Wat+Road+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'ถนนทรงวาด\nถนนทรงวาด แขวงจักรวรรดิ เขตสัมพันธวงศ์ กรุงเทพมหานคร 10100')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>Garçon Dept.</b><span>服飾與選物</span></div><div class="nearitem"><b>PLAY art house</b><span>小型藝廊</span></div><div class="nearitem"><b>ท่าเรือราชวงศ์ · Ratchawong Pier</b><span>想看河景可順走</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>Song Wat → Yaowarat</b><span class="modebadge">步行</span></div><div class="steps">兩區本來就相連，建議直接走。從 Song Wat 往 <b>Yaowarat Road ถนนเยาวราช</b> 約 8–12 分鐘，不值得為 1 站搭車。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Song+Wat+Road+Bangkok&destination=Yaowarat+Road+Bangkok&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Song+Wat+Road+Bangkok&destination=Yaowarat+Road+Bangkok&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="2"><div class="time">12:30</div><div class="card">
+  <div class="card-head"><div class="illu">🥢</div><div><div class="type">lunch</div><h3>Yaowarat / Chinatown</h3><p class="desc">午餐＋唐人街散步 · 約 75 分鐘</p></div><button class="donebtn" onclick="toggleDone(2)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">ถนนเยาวราช</div><div class="thai-address">ถนนเยาวราช แขวงสัมพันธวงศ์ เขตสัมพันธวงศ์ กรุงเทพมหานคร 10100</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Yaowarat+Road+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'ถนนเยาวราช\nถนนเยาวราช แขวงสัมพันธวงศ์ เขตสัมพันธวงศ์ กรุงเทพมหานคร 10100')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>วัดมังกรกมลาวาส · Wat Mangkon</b><span>MRT 旁，華人寺廟</span></div><div class="nearitem"><b>ตลาดเก่าเยาวราช · Old Market</b><span>傳統食材與小吃</span></div><div class="nearitem"><b>ตลาดน้อย · Talat Noi</b><span>若午餐提早結束才考慮，不要硬塞</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>Yaowarat → CentralWorld</b><span class="modebadge">MRT → BTS</span></div><div class="steps">到 <b>Wat Mangkon BL29</b> → 搭 <span class='linepill mrt'>MRT Blue Line</span> 往 Lak Song 方向到 <b>Sukhumvit BL22</b> → 步行轉乘 <b>BTS Asok E4</b> → 搭 <span class='linepill bts'>BTS Sukhumvit Line</span> 往 Khu Khot 方向 3 站到 <b>Chit Lom E1</b> → Exit 1 / Skywalk 步行至 CentralWorld。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Yaowarat+Road+Bangkok&destination=CentralWorld+Bangkok&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Yaowarat+Road+Bangkok&destination=CentralWorld+Bangkok&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="3"><div class="time">14:30</div><div class="card">
+  <div class="card-head"><div class="illu">🛍️</div><div><div class="type">shopping</div><h3>CentralWorld</h3><p class="desc">固定保留 · 至少 90 分鐘</p></div><button class="donebtn" onclick="toggleDone(3)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">เซ็นทรัลเวิลด์</div><div class="thai-address">999/9 ถนนพระราม 1 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร 10330</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=CentralWorld+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'เซ็นทรัลเวิลด์\n999/9 ถนนพระราม 1 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร 10330')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>Big C Ratchadamri</b><span>對面補零食／超市採買</span></div><div class="nearitem"><b>ศาลท้าวมหาพรหม · Erawan Shrine</b><span>步行約 8 分鐘</span></div><div class="nearitem"><b>Gaysorn Village</b><span>想逛質感品牌可順路</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>CentralWorld → THE FOREST MASSAGE</b><span class="modebadge">Grab / 步行</span></div><div class="steps">這段不建議為了搭軌道交通硬繞。<span class='linepill grab'>Grab</span> 約 8–15 分鐘（視塞車）；或步行約 18–22 分鐘往 Pratunam / Ratchaprarop。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=CentralWorld+Bangkok&destination=THE+FOREST+MASSAGE+Bangkok&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=CentralWorld+Bangkok&destination=THE+FOREST+MASSAGE+Bangkok&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="4"><div class="time">16:10</div><div class="card">
+  <div class="card-head"><div class="illu">🌿</div><div><div class="type">rain buffer</div><h3>THE FOREST MASSAGE</h3><p class="desc">1.5–2 小時 · 午後雨勢 buffer</p></div><button class="donebtn" onclick="toggleDone(4)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">THE FOREST MASSAGE</div><div class="thai-address">120/181 ซอยราชปรารภ 3 แขวงถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=THE+FOREST+MASSAGE+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'THE FOREST MASSAGE\n120/181 ซอยราชปรารภ 3 แขวงถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>ตลาดประตูน้ำ · Pratunam Market</b><span>如果沒下雨、按摩前還有空檔</span></div><div class="nearitem"><b>Platinum Fashion Mall</b><span>室內逛街雨備</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>THE FOREST MASSAGE → Avani Ratchada</b><span class="modebadge">ARL → MRT</span></div><div class="steps">不塞車可直接 Grab。若想全程大眾運輸：步行至 <b>Ratchaprarop A8</b> → 搭 <span class='linepill arl'>Airport Rail Link</span> 1 站到 <b>Makkasan A6</b> → 步行轉乘 <b>MRT Phetchaburi BL21</b> → <span class='linepill mrt'>Blue Line</span> 1 站到 <b>Phra Ram 9 BL20</b> → 出站即飯店。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=THE+FOREST+MASSAGE+Bangkok&destination=Avani+Ratchada+Bangkok+Hotel&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=THE+FOREST+MASSAGE+Bangkok&destination=Avani+Ratchada+Bangkok+Hotel&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="5"><div class="time">18:20</div><div class="card">
+  <div class="card-head"><div class="illu">🏨</div><div><div class="type">reset</div><h3>Avani Ratchada</h3><p class="desc">洗澡、換裝、休息</p></div><button class="donebtn" onclick="toggleDone(5)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">โรงแรมอวานี รัชดา กรุงเทพฯ</div><div class="thai-address">1 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Avani+Ratchada+Bangkok+Hotel">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'โรงแรมอวานี รัชดา กรุงเทพฯ\n1 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>Fortune Town</b><span>同棟，臨時補東西方便</span></div><div class="nearitem"><b>Central Rama 9</b><span>飯店正對面</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>Avani → Thong Lo</b><span class="modebadge">MRT → BTS</span></div><div class="steps">從 <b>Phra Ram 9 BL20</b> 搭 <span class='linepill mrt'>MRT Blue Line</span> 2 站到 <b>Sukhumvit BL22</b> → 步行轉 <b>BTS Asok E4</b> → 搭 <span class='linepill bts'>BTS Sukhumvit Line</span> 往 Kheha 方向 2 站到 <b>Thong Lo E6</b>。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Avani+Ratchada+Bangkok+Hotel&destination=Thong+Lo+Bangkok&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Avani+Ratchada+Bangkok+Hotel&destination=Thong+Lo+Bangkok&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="6"><div class="time">20:00</div><div class="card">
+  <div class="card-head"><div class="illu">🍽️</div><div><div class="type">dinner</div><h3>Thong Lo dinner</h3><p class="desc">餐廳待選 · 原則是 Paper Plane 附近</p></div><button class="donebtn" onclick="toggleDone(6)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">ร้านอาหารย่านทองหล่อ (ยังไม่ได้เลือกร้าน)</div><div class="thai-address">ถนนทองหล่อ (สุขุมวิท 55) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Thong+Lo+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'ร้านอาหารย่านทองหล่อ (ยังไม่ได้เลือกร้าน)\nถนนทองหล่อ (สุขุมวิท 55) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>Thong Lo / Sukhumvit 55</b><span>餐廳選在 BTS Thong Lo 至 T-One 間最省力</span></div><div class="nearitem"><b>EmQuartier / Phrom Phong</b><span>若臨時改成商場晚餐才考慮</span></div></div></div></details>
+  </div></article>
+<div class="transit"><div class="route-top"><b>Thong Lo dinner → Paper Plane</b><span class="modebadge">步行</span></div><div class="steps">若晚餐選在 BTS Thong Lo / Sukhumvit 55 一帶，往 <b>T-One Building, Sukhumvit 40</b> 步行約 8–15 分鐘。酒吧在 40 樓，不需要再搭一段 BTS。</div><div class="transit-actions"><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Thong+Lo+Bangkok&destination=Paper+Plane+Project+Bangkok&travelmode=transit">大眾運輸導航 ↗</a><a class="tool" href="https://www.google.com/maps/dir/?api=1&origin=Thong+Lo+Bangkok&destination=Paper+Plane+Project+Bangkok&travelmode=driving">Grab 路線 ↗</a></div></div>
+<article class="stop" data-stop="7"><div class="time">21:30</div><div class="card">
+  <div class="card-head"><div class="illu">🍸</div><div><div class="type">reservation</div><h3>Paper Plane Project</h3><p class="desc">T-One 40F · 需預約</p></div><button class="donebtn" onclick="toggleDone(7)">✓</button></div>
+  <div class="addressbox"><div class="thai-name">Paper Plane Project</div><div class="thai-address">ชั้น 40 อาคาร T-One, 8 ซอยสุขุมวิท 40 แขวงพระโขนง เขตคลองเตย กรุงเทพมหานคร 10110</div></div>
+  <div class="tools"><a class="tool primary" href="https://www.google.com/maps/search/?api=1&query=Paper+Plane+Project+Bangkok">Google Maps ↗</a><button class="tool" onclick="copyThai(this,'Paper Plane Project\nชั้น 40 อาคาร T-One, 8 ซอยสุขุมวิท 40 แขวงพระโขนง เขตคลองเตย กรุงเทพมหานคร 10110')">คัดลอก / 複製泰文定位</button></div>
+  <details class="more"><summary>＋ 附近還可以逛什麼</summary><div class="morebox">
+<div class="nearlist"><div class="nearitem"><b>Tichuca Rooftop Bar</b><span>同棟樓上；有體力才續攤</span></div><div class="nearitem"><b>BTS Thong Lo E6</b><span>回程可步行回 BTS，或直接 Grab 回 Avani</span></div></div></div></details>
+  </div></article>
+</div>
 </section>
+
+<section class="section" id="songwat"><div class="section-head"><h2>Song Wat edit</h2><span>save these</span></div><div class="edit-grid">
+<div class="shop"><span class="no">01 · fashion</span><h4>Garçon Dept.</h4><p>服飾與生活選物，優先。</p><label><input type="checkbox" class="shopcheck" data-shop="0"></label></div>
+<div class="shop"><span class="no">02 · objects</span><h4>Oyster and Things</h4><p>lifestyle / objects。</p><label><input type="checkbox" class="shopcheck" data-shop="1"></label></div>
+<div class="shop"><span class="no">03 · art</span><h4>PLAY art house</h4><p>有時間再進。</p><label><input type="checkbox" class="shopcheck" data-shop="2"></label></div>
+<div class="shop"><span class="no">04 · coffee</span><h4>SCR / Local Boys</h4><p>二選一即可。</p><label><input type="checkbox" class="shopcheck" data-shop="3"></label></div>
+</div></section>
+
+<section class="section" id="central"><div class="section-head"><h2>CentralWorld edit</h2><span>90 min hit list</span></div><div class="edit-grid">
+<div class="shop"><span class="no">01 · thai fashion</span><h4>GENTLEWOMAN</h4><p>泰國人氣女裝與包款。</p><label><input type="checkbox" class="shopcheck" data-shop="4"></label></div>
+<div class="shop"><span class="no">02 · scent</span><h4>MITH / Journal / Butterfly</h4><p>集中試泰國香氛。</p><label><input type="checkbox" class="shopcheck" data-shop="5"></label></div>
+<div class="shop"><span class="no">03 · local goods</span><h4>HUG THAI</h4><p>泰國品牌與伴手禮。</p><label><input type="checkbox" class="shopcheck" data-shop="6"></label></div>
+<div class="shop"><span class="no">04 · lifestyle</span><h4>CHABATREE</h4><p>木質生活用品。</p><label><input type="checkbox" class="shopcheck" data-shop="7"></label></div>
+<div class="shop"><span class="no">05 · books</span><h4>Kinokuniya</h4><p>雜誌、設計、旅行書。</p><label><input type="checkbox" class="shopcheck" data-shop="8"></label></div>
+<div class="shop"><span class="no">06 · optional</span><h4>POP MART</h4><p>時間不足時可刪。</p><label><input type="checkbox" class="shopcheck" data-shop="9"></label></div>
+</div></section>
+
+<section class="section"><div class="section-head"><h2>Tonight</h2><span>reservation</span></div><div class="booking"><small>21:30 · T-ONE 40F</small><h3>Paper Plane Project</h3><p>官方資訊為 T-One Building 40 樓，訂位透過 LINE @paperplaneproject。當天建議 21:15 前抵達大樓。</p></div></section>
 
 <div class="footer">Bangkok, one good street at a time.</div>
 </div>
-
-<div class="toast" id="toast">已複製地址</div>
-
-<nav class="bottom">
-  <button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})"><b>○</b>Today</button>
-  <button onclick="document.querySelector('.timeline').scrollIntoView({behavior:'smooth'})"><b>⌁</b>Route</button>
-  <button onclick="document.getElementById('central').scrollIntoView({behavior:'smooth'})"><b>♡</b>Saved</button>
-  <a href="https://www.google.com/maps/search/?api=1&query=Avani+Ratchada+Bangkok+Hotel"><b>⌂</b>Hotel</a>
-</nav>
-
+<div class="toast" id="toast">已複製泰文定位資訊</div>
+<nav class="bottom"><button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})"><b>○</b>Today</button><button onclick="document.getElementById('nearby').scrollIntoView({behavior:'smooth'})"><b>◎</b>Nearby</button><button onclick="document.getElementById('central').scrollIntoView({behavior:'smooth'})"><b>♡</b>Saved</button><a href="https://www.google.com/maps/search/?api=1&query=Avani+Ratchada+Bangkok+Hotel"><b>⌂</b>Hotel</a></nav>
 <script>
 const tripDate='2026-10-09';
-const stopTimes=['09:30','10:30','12:30','14:30','16:10','18:20','20:00','21:30'];
-const stopTitles=['Trok Mor Morning Market','Song Wat 嵩越路','Yaowarat / Chinatown','CentralWorld','THE FOREST MASSAGE','Avani Ratchada','Thong Lo dinner','Paper Plane Project'];
-
-function setMode(rain,el){
-  document.getElementById('app').classList.toggle('rain',rain);
-  document.querySelectorAll('.tabs button').forEach((b,i)=>{if(i<2)b.classList.remove('active')});
-  el.classList.add('active');
-  localStorage.setItem('bkk-rain',rain?'1':'0');
-}
-function toast(msg){
-  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)
-}
-async function copyAddress(btn,addr){
-  try{await navigator.clipboard.writeText(addr);toast('已複製地址');}
-  catch(e){const x=document.createElement('textarea');x.value=addr;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove();toast('已複製地址');}
-}
-function toggleDone(i,btn){
-  const key='bkk-stop-'+i;const next=localStorage.getItem(key)!=='1';
-  localStorage.setItem(key,next?'1':'0');
-  document.querySelector('[data-stop="'+i+'"] .card').classList.toggle('done',next);
-  updateProgress();
-}
-function updateProgress(){
-  let done=0;
-  stopTitles.forEach((_,i)=>{const yes=localStorage.getItem('bkk-stop-'+i)==='1';const c=document.querySelector('[data-stop="'+i+'"] .card');if(c)c.classList.toggle('done',yes);if(yes)done++});
-  document.getElementById('progressText').textContent=done+' / '+stopTitles.length;
-  document.getElementById('progressBar').style.width=(done/stopTitles.length*100)+'%';
-}
-function bangkokNow(){
-  const p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
-  const o={};p.forEach(x=>o[x.type]=x.value);return {date:o.year+'-'+o.month+'-'+o.day,time:o.hour+':'+o.minute}
-}
-function updateStatus(){
-  const now=bangkokNow(), title=document.getElementById('statusTitle'), sub=document.getElementById('statusSub'), label=document.getElementById('statusLabel');
-  if(now.date<tripDate){
-    const a=new Date(now.date+'T00:00:00'),b=new Date(tripDate+'T00:00:00'),days=Math.round((b-a)/86400000);
-    label.textContent='TRIP COUNTDOWN';title.textContent=days+' days to Bangkok';sub.textContent='10/9 的路線、地址與收藏都已放在這頁。';return;
-  }
-  if(now.date>tripDate){label.textContent='TRIP ARCHIVE';title.textContent='10/9 Bangkok day';sub.textContent='行程結束後，勾選紀錄仍會保留在這台手機。';return;}
-  let idx=stopTimes.findIndex(t=>now.time<t); if(idx<0)idx=stopTimes.length-1;
-  label.textContent=idx===0?'FIRST STOP':'NEXT STOP';
-  title.textContent=stopTimes[idx]+' · '+stopTitles[idx];
-  sub.textContent='點時間軸該站的 Maps 就可以直接導航。';
-}
-function shareTrip(){
-  if(navigator.share){navigator.share({title:'Bangkok Trip 2026',text:'10/9 曼谷行程',url:location.href}).catch(()=>{});}
-  else{navigator.clipboard.writeText(location.href);toast('已複製網站連結');}
-}
-function openWholeRoute(){
-  const url='https://www.google.com/maps/dir/?api=1&origin=Avani+Ratchada+Bangkok+Hotel&destination=Paper+Plane+Project+Bangkok&waypoints=Trok+Mor+Morning+Market+Bangkok%7CSong+Wat+Road+Bangkok%7CYaowarat+Road+Bangkok%7CCentralWorld+Bangkok%7CTHE+FOREST+MASSAGE+Bangkok%7CAvani+Ratchada+Bangkok+Hotel&travelmode=driving';
-  location.href=url;
-}
+const stops=[
+{t:'09:30',n:'Trok Mor Morning Market',lat:13.74958,lng:100.49924},
+{t:'10:30',n:'Song Wat 嵩越路',lat:13.73933,lng:100.50375},
+{t:'12:30',n:'Yaowarat / Chinatown',lat:13.73880,lng:100.51218},
+{t:'14:30',n:'CentralWorld',lat:13.74694,lng:100.53972},
+{t:'16:10',n:'THE FOREST MASSAGE',lat:13.7546,lng:100.5409},
+{t:'18:20',n:'Avani Ratchada',lat:13.756693,lng:100.564709},
+{t:'20:00',n:'Thong Lo dinner',lat:13.7300,lng:100.5835},
+{t:'21:30',n:'Paper Plane Project',lat:13.7209,lng:100.5847}
+];
+function setMode(rain,el){document.getElementById('app').classList.toggle('rain',rain);document.querySelectorAll('.tabs button').forEach((b,i)=>{if(i<2)b.classList.remove('active')});el.classList.add('active');localStorage.setItem('bkk-rain',rain?'1':'0')}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500)}
+async function copyThai(btn,text){try{await navigator.clipboard.writeText(text)}catch(e){const x=document.createElement('textarea');x.value=text;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}toast('已複製泰文名稱＋地址')}
+function toggleDone(i){const key='bkk-stop-'+i;localStorage.setItem(key,localStorage.getItem(key)==='1'?'0':'1');updateProgress()}
+function updateProgress(){let done=0;stops.forEach((_,i)=>{const yes=localStorage.getItem('bkk-stop-'+i)==='1';const c=document.querySelector('[data-stop="'+i+'"] .card');if(c)c.classList.toggle('done',yes);if(yes)done++});document.getElementById('progressText').textContent=done+' / '+stops.length;document.getElementById('progressBar').style.width=(done/stops.length*100)+'%'}
+function bangkokNow(){const p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());const o={};p.forEach(x=>o[x.type]=x.value);return{date:o.year+'-'+o.month+'-'+o.day,time:o.hour+':'+o.minute}}
+function updateStatus(){const now=bangkokNow(),title=document.getElementById('statusTitle'),sub=document.getElementById('statusSub'),label=document.getElementById('statusLabel');if(now.date<tripDate){const a=new Date(now.date+'T00:00:00'),b=new Date(tripDate+'T00:00:00'),days=Math.round((b-a)/86400000);label.textContent='TRIP COUNTDOWN';title.textContent=days+' days to Bangkok';sub.textContent='泰文地址、交通轉乘與收藏都已放進這頁。';return}if(now.date>tripDate){label.textContent='TRIP ARCHIVE';title.textContent='10/9 Bangkok day';sub.textContent='完成紀錄仍會保留在這台手機。';return}let idx=stops.findIndex(x=>now.time<x.t);if(idx<0)idx=stops.length-1;label.textContent=idx===0?'FIRST STOP':'NEXT STOP';title.textContent=stops[idx].t+' · '+stops[idx].n;sub.textContent='可直接點 Maps 導航，或複製泰文地址給 Grab / 計程車。'}
+function shareTrip(){if(navigator.share){navigator.share({title:'Bangkok Trip 2026',text:'10/9 曼谷行程',url:location.href}).catch(()=>{})}else{navigator.clipboard.writeText(location.href);toast('已複製網站連結')}}
+function openWholeRoute(){location.href='https://www.google.com/maps/dir/?api=1&origin=Avani+Ratchada+Bangkok+Hotel&destination=Paper+Plane+Project+Bangkok&waypoints=Trok+Mor+Morning+Market+Bangkok%7CSong+Wat+Road+Bangkok%7CYaowarat+Road+Bangkok%7CCentralWorld+Bangkok%7CTHE+FOREST+MASSAGE+Bangkok%7CAvani+Ratchada+Bangkok+Hotel&travelmode=transit'}
+function rad(x){return x*Math.PI/180}function dist(a,b,c,d){const R=6371,x=rad(c-a),y=rad(d-b),q=Math.sin(x/2)**2+Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(q))}
+function findNearby(){const box=document.getElementById('nearbyResult');box.classList.add('show');box.textContent='正在取得目前位置…';if(!navigator.geolocation){box.textContent='這個瀏覽器不支援定位。';return}navigator.geolocation.getCurrentPosition(p=>{const la=p.coords.latitude,lo=p.coords.longitude;const ranked=stops.map((s,i)=>({...s,i,d:dist(la,lo,s.lat,s.lng)})).sort((a,b)=>a.d-b.d);const s=ranked[0],unit=s.d<1?Math.round(s.d*1000)+' m':s.d.toFixed(1)+' km';box.innerHTML='<b>最近：</b>'+s.n+' · 約 '+unit+'<br><span style="color:#82796f">下一個最近點：'+ranked[1].n+' · '+(ranked[1].d<1?Math.round(ranked[1].d*1000)+' m':ranked[1].d.toFixed(1)+' km')+'</span>';},()=>{box.textContent='無法取得位置。請確認瀏覽器已允許這個網站使用定位。'},{enableHighAccuracy:true,timeout:8000})}
 document.querySelectorAll('.shopcheck').forEach((x,i)=>{x.checked=localStorage.getItem('bkk-shop-'+i)==='1';x.onchange=()=>localStorage.setItem('bkk-shop-'+i,x.checked?'1':'0')});
 if(localStorage.getItem('bkk-rain')==='1'){document.getElementById('app').classList.add('rain');document.querySelectorAll('.tabs button').forEach((b,i)=>{if(i<2)b.classList.toggle('active',i===1)})}
 updateProgress();updateStatus();setInterval(updateStatus,60000);
 </script>
-</body>
-</html>
+</body></html>
